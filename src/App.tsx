@@ -34,6 +34,7 @@ import {
   ViewerStatusbarItemsProvider,
 } from "@itwin/web-viewer-react";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { ViewAttributesWidgetProvider } from "./ViewAttributesWidget";
 
 import { Auth } from "./Auth";
 import { history } from "./history";
@@ -154,6 +155,7 @@ const App: React.FC = () => {
         enablePerformanceMonitors={true} // see description in the README (https://www.npmjs.com/package/@itwin/web-viewer-react)
         onIModelAppInit={onIModelAppInit}
         uiProviders={[
+          new ViewAttributesWidgetProvider(),
           new ViewerNavigationToolsProvider(),
           new ViewerContentToolsProvider({
             vertical: {
